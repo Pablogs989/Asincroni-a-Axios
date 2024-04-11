@@ -57,7 +57,7 @@ axios.get("https://dog.ceo/api/breeds/list/all")
 
 axios.get("https://dog.ceo/api/breeds/image/random")
     .then(res => {
-        console.log(res.data.message);
+        console.log("Imagen random" + res.data.message);
     })
     .catch(err => {
         console.log(err)
@@ -66,7 +66,7 @@ axios.get("https://dog.ceo/api/breeds/image/random")
 axios.get("https://dog.ceo/api/breed/hound/images")
     .then(res => {
         (res.data.message).forEach(dogImage => {
-            console.log(dogImage);
+            console.log("Imagen de raza Hound " + dogImage);
         });
     })
     .catch(err => {
@@ -74,7 +74,7 @@ axios.get("https://dog.ceo/api/breed/hound/images")
     })
 
 
-    
+
 let breed = "akita";
 
 axios.get(`https://dog.ceo/api/breed/${breed}/images/random`)
