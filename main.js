@@ -40,3 +40,47 @@ const showUsers = () => {
 }
 
 btn.addEventListener('click', showUsers);
+
+
+//Extra
+
+axios.get("https://dog.ceo/api/breeds/list/all")
+    .then(res => {
+        console.log(JSON.stringify(res.data.message))
+        for (const dog in res.data.message) {
+            console.log(dog);
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+axios.get("https://dog.ceo/api/breeds/image/random")
+    .then(res => {
+        console.log(res.data.message);
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+axios.get("https://dog.ceo/api/breed/hound/images")
+    .then(res => {
+        (res.data.message).forEach(dogImage => {
+            console.log(dogImage);
+        });
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+
+    
+let breed = "akita";
+
+axios.get(`https://dog.ceo/api/breed/${breed}/images/random`)
+    .then(res => {
+        console.log(res.data.message);
+    })
+    .catch(err => {
+        console.log(err)
+    })
