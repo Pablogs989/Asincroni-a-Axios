@@ -34,7 +34,9 @@ axios.get("https://jsonplaceholder.typicode.com/users")
 
 const showUsers = () => {
     console.log(JSON.stringify(users))
-    info.innerHTML = `<p>${JSON.stringify(users)}</p>`
+    users.forEach(user => {
+        info.innerHTML += `<p>${user.name}</p>`
+    });
 }
 
 btn.addEventListener('click', showUsers);
